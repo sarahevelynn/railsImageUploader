@@ -26,6 +26,9 @@
         <p>
           <%= post.caption %>
         </p>
+        <div class="comment-count">
+               <span class="tag is-rounded"><%= post.comments.count %> comments</span>
+           </div>
         <p>
           <%= link_to 'Show', post %><br >
           <%= link_to 'Edit', edit_post_path(post) %><br >
