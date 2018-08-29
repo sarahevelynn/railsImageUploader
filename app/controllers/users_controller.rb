@@ -75,4 +75,6 @@ class UsersController < ApplicationController
     def confirm_authorization
       unless current_user == @user
         redirect_to root_path, alert: "You dont have permission do do this."
+      end
+    end 
 end
