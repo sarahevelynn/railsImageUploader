@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-include AuthorizationHelper
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-before_action :confirm_owner, only: [:edit, :update, :destroy]
-before_action :confirm_login, only: [:new, :edit, :update, :destroy]
+  include AuthorizationHelper
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :confirm_owner, only: %i[edit update destroy]
+  before_action :confirm_login, only: %i[new edit update destroy]
   # GET /posts
   # GET /posts.json
   def index
@@ -11,8 +11,7 @@ before_action :confirm_login, only: [:new, :edit, :update, :destroy]
 
   # GET /posts/1
   # GET /posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -20,8 +19,7 @@ before_action :confirm_login, only: [:new, :edit, :update, :destroy]
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts
   # POST /posts.json
@@ -64,19 +62,20 @@ before_action :confirm_login, only: [:new, :edit, :update, :destroy]
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :caption, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    def confirm_owner
-      unless @post.user == current_user
-        redirect_to root_path, alert: "You do not have permission to access this."
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :caption, :image)
+  end
+
+  def confirm_owner
+    unless @post.user == current_user
+      redirect_to root_path, alert: 'You do not have permission to access this.'
+  end
   end
 end

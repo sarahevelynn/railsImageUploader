@@ -8,18 +8,50 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p id="alert"><%= alert %></p>
-    <% if current_user %>
-    Logged in as: <%= current_user.username%>!<br>
-    <%= link_to "Log Out", :logout %>
-    <% else %>
-    <%= link_to "Log In", :login %> or
-    <%= link_to "Sign Up", :signup %>
-    <% end %>
-    <%= yield %>
-    <p>
-  <%= link_to "Back to Home", :root %>
-</p>
+  <body >
+    <nav class="navMobile">
+      <div class="nav-wrapper blue-grey darken-1">
+        <%= link_to :root do %>
+        <%= content_tag :span, "Photo Sharing", :class => "appTitle" %>
+        <% end %>
+        <ul class="right hide-on-med-and-down">
+          <li class="navMobile">
+            <% if current_user %>
+            Logged in as:
+            <%= current_user.username%>!
+          </li>
+
+          <li >
+            <%= link_to :logout do %>
+            <%= content_tag :span, "Log Out", :class => "navMobile" %>
+            <% end %>
+          </li>
+        <% else %>
+          <li >
+            <%= link_to :login do %>
+            <%= content_tag :span, "Log In", :class => "navMobile" %>
+            <% end %>
+          </li>
+          <li >
+            <%= link_to :signup do %>
+            <%= content_tag :span, "Sign Up", :class => "navMobile" %>
+            <% end %>
+          </li>
+        </ul>
+        <% end %>
+
+      </div>
+    </nav>
+
+    <div id="appContent">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <p class="#b2dfdb teal lighten-4 waves-effect waves-light btn">
+        <%= link_to "Back to Home", :root %>
+      </p>
+    </footer>
+
   </body>
 </html>
