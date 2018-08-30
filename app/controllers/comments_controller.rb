@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
   before_action :confirm_login
 
   def create
-    @post = current_user.posts.build(post_params)
-    @comment = @post.comments.create(params[:comment].permit(:comment))
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(params[:comment].permit(:name, :comment))
     redirect_to post_path(@post)
   end
 
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def confirm_login
     unless current_user
-      redirect_to login_path, alert: 'Must be logged in to comment!'
+      redirect_to login_path, notice: 'Must be logged in to comment!'
     end
   end
 end

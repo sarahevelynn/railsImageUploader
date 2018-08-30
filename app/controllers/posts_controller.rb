@@ -75,7 +75,7 @@ class PostsController < ApplicationController
 
   def confirm_owner
     unless @post.user == current_user
-      redirect_to root_path, alert: 'You do not have permission to access this.'
+      redirect_to root_path, notice: 'You do not have permission to do this.'
   end
   end
 end

@@ -28,7 +28,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-gem 'acts_as_votable', '~> 0.10.0'
 gem 'simple_form'
 gem 'materialize-sass'
 

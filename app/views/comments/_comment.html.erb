@@ -1,17 +1,24 @@
-<div class="box">
+<div class="box commentBox">
   <article class="media">
     <div class="media-content">
       <div class="content">
         <p>
-          <p>
-            <em><%= link_to @post.user, @post.user %>
+          <p class="commentName">
+            Comment by:
+            <em>
+              <%= link_to @post.user do %>
+              <%= content_tag :span, @post.user, :class => "postHeader" %>
+              <% end %>
             </em>
           </p>
           <%= comment.comment %>
         </p>
       </div>
     </div>
-    <%= link_to 'Delete', [comment.post, comment],
-                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+    <div class="delete">
+      <%= link_to 'Delete', [comment.post, comment],
+                    method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+
+    </div>
   </article>
 </div>
