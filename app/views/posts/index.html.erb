@@ -12,9 +12,12 @@
             <div class="card-image">
               <div class="photoCardTitle">
                 <em><%= post.title %></em>
+                -
                 <strong>
-                  -
-                  <%= link_to post.user, post.user %>
+                  <%= link_to post.user do %>
+                  <%= content_tag :span, post.user, :class => "postHeader" %>
+                  <% end %>
+
                 </strong>
 
               </div>

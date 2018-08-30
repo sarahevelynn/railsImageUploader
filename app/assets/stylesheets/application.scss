@@ -1,129 +1,206 @@
 @import 'materialize';
 
-body{
+body {
   font-family: times;
 }
 
-p{
-    font-size:30px;
-    font-weight: bold;
-    color: #2F4F4F;
-    text-align: left;
-}
-
-a{
-  color:#D9E3EA
-}
-
-footer{
-  position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-text-align: center;
-}
-
-td{
-  border-color: #506261;
-  border-style: inset;
-  text-align: center;
-}
-
-#appContent{
-  padding-left: 10px
-}
-
-.BottomButton{
-  background-color: #5C9B95
-}
-
-.pageTitle{
-  color: #465F6E
-}
-
-.navMobile{
-  font-size:20px;
-
-}
-
-.appTitle{
+p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #2F4F4F;
   text-align: left;
-  font-size:35px;
-  padding-left: 10px
 }
 
-.commentCount{
-  padding-left: 10px
+a {
+  color: white;
 }
 
-.commentsList{
-  font-size:30px
+a:hover {
+  color: #D9E3EA;
 }
 
-.commentLabel{
-  font-size:20px
-}
-
-.leaveComment{
-  font-size:30px
-}
-
-.photoCardTitle{
-  font-size:25px;
-}
-
-.cardButtons{
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
 }
 
-.editBack{
-  font-size: 20px;
+table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userButton {
+  border-color: #506261;
+  border-style: outset;
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+  color: black;
+}
+
+#appContent {
+  padding-left: 10px;
+}
+
+#notice{
+  color:#1E4867
+}
+
+.BottomButton {
+  background-color: #5C9B95;
+}
+
+.pageTitle {
+  color: #465F6E;
+  font-size: 50px;
   padding-left: 50px;
-  padding-top: 15px;
 }
 
-.imagePage{
-  width:500px
+.navMobile {
+  font-size: 20px;
 }
 
-.userInfo{
-background-color: RGB( 137, 155, 154, 0.5);
-color: white;
-font-size: 20px;
+.appTitle {
+  text-align: left;
+  font-size: 35px;
+  padding-left: 10px;
 }
 
-.fields{
-  font-size: 40px
+.commentCount {
+  padding-left: 10px;
 }
 
-.loginPage{
+.commentsList {
+  font-size: 30px;
+}
+
+.commentLabel {
+  font-size: 20px;
+}
+
+.leaveComment {
+  font-size: 30px;
+}
+
+.photoCardTitle {
+  font-size: 25px;
+}
+
+.cardButtons {
+  text-align: center;
+}
+
+.editBack {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  background-color: RGB(170, 191, 204);
+  width: 110px;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-bottom: 100px
+}
+
+.imagePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;}
+
+  .postHeader{
+      color:#5E819B;
+      text-transform: capitalize;
+  }
+
+  .postHeader:hover{
+      color:#1E4867;
+  }
+
+.postInfo{
+  text-align: center;
+}
+
+.endPostLine2{
+  width:600px
+}
+
+.endPostLine{
+  width:400px
+}
+
+.imagePost{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.userName {
+  background-color: RGB( 55, 76, 91, 0.5);
+  margin:10px
+}
+
+.userInfo {
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.userLabel {
+  font-size: 15px;
+}
+
+.fields {
+  font-size: 40px;
+}
+
+.loginPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%
+  width: 100%;
 }
 
-.loginSection{
+.loginSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-style: ridge;
-  padding-right:200px;
-  padding-left:200px;
-  padding-top: 0px;
-  padding-bottom: 10px
+  padding: 0 200px 10px;
 }
 
-.loginInfo{
+.newUserSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-style: ridge;
+  padding: 0 100px 10px;
+  margin: 0 0 40px;
 }
 
-.newUserButtons{
+.loginInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.userInput {
+  margin: 0;
+}
+
+.newUserButtons {
   display: flex;
   flex-direction: row;
 }

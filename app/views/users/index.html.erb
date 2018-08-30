@@ -11,12 +11,13 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr class="userInfo">
-        <td><%= link_to user.username, user %></td>
-        <td><%= link_to 'Go to Images', user %></td>
-        <td><%= link_to 'Edit User Information', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete User', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr class="userInfo">
+      <td class="userName btn"><%= link_to user.username, user %></td>
+      <td class="userButton waves-effect waves-light btn"><%= link_to 'Go to their Pictures', user %></td>
+      <td class="userButton waves-effect waves-light btn"><%= link_to 'Edit User Information', edit_user_path(user) %></td>
+      <td class="userButton waves-effect waves-light btn"><%= link_to 'Delete User', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>

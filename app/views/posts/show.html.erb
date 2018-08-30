@@ -1,17 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <em><%= @post.title %></em>
-  <strong>
-    -<%= link_to @post.user, @post.user %>
-  </strong>
-</p>
-<p class="imagePage">
-  <%= link_to image_tag(@post.image.url :standard), @post %>
-</p>
-<p>
-  <%= @post.caption %>
-</p>
+  <p class="postInfo">
+    <em><%= @post.title %></em>
+    <strong> by:
+      <%= link_to @post.user do %>
+      <%= content_tag :span, @post.user, :class => "postHeader" %>
+      <% end %>
+    </strong>
+  </p>
+  <p class="imagePage">
+    <%= link_to image_tag(@post.image.url :standard), @post %>
+  </p>
+  <p class="postInfo">
+    <%= @post.caption %>
+    <hr class="endPostLine">
+    <hr class="endPostLine2">
+    <hr class="endPostLine">
+  </p>
 <section class="sectionComments">
   <div class="container">
     <h2 class="commentsList">

@@ -12,24 +12,25 @@
     </ul>
   </div>
   <% end %>
-  <div class="loginSection">
+  <div class="newUserSection">
     <p class="loginInfo">
       <div class="fields">
         <%= form.label :username, { class: 'commentLabel' } %>
-        <%= form.text_field :username %>
+        <%= form.text_field :username, { class: 'userInput' } %>
       </div>
       <div class="field">
         <%= form.label :password, { class: 'commentLabel' } %>
-        <%= form.password_field :password %>
+        <%= form.password_field :password, { class: 'userInput' } %>
       </div>
       <div class="field">
         <%= form.label "Confirm", { class: 'commentLabel' } %>
-        <%= form.password_field :password_confirmation %>
+        <%= form.password_field :password_confirmation, { class: 'userInput' } %>
       </div>
-    </p>
-
       <p class="BottomButton waves-effect waves-light btn">
         <%= form.submit %>
       </p>
+    </p>
+
+
     <% end %>
   </div>
