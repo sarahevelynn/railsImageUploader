@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_08_29_173522) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "name"
     t.text "comment"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_173522) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "caption"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
@@ -37,4 +40,5 @@ ActiveRecord::Schema.define(version: 2018_08_29_173522) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "posts", "users"
 end
