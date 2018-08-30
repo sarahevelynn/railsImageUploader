@@ -10,34 +10,33 @@
         <div class="col s12 m3">
           <div class="card">
             <div class="card-image">
-              <em><%= post.title %></em>
-              <strong>
-                -
-                <%= link_to post.user, post.user %>
-              </strong>
-              <%= link_to image_tag(post.image.url :index), post %>
+              <div class="photoCardTitle">
+                <em><%= post.title %></em>
+                <strong>
+                  -
+                  <%= link_to post.user, post.user %>
+                </strong>
+
+              </div>
+              <%= link_to image_tag(post.image.url :index ), post %>
             </div>
             <div class="card-content">
               <%= post.caption %>
             </div>
-            <div class="comment-count">
+            <div class="commentCount">
               <span class="tag is-rounded"><%= post.comments.count %>
                 comments</span>
             </div>
-            <p class="#b2dfdb teal lighten-4 waves-effect waves-light btn">
-              <%= link_to 'Edit', edit_post_path(post) %><br >
-            </p>
-            <p class="#b2dfdb teal lighten-4 waves-effect waves-light btn">
-              <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </p>
+            <div class="cardButtons">
+              <p class="#b2dfdb teal lighten-3 waves-effect waves-light btn">
+                <%= link_to 'Edit', edit_post_path(post) %><br >
+              </p>
+              <p class="#b2dfdb teal lighten-3 waves-effect waves-light btn">
+                <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </p>
+            </div>
 
           </tr>
           <% end %>
         </tbody>
       </table>
-
-      <br>
-
-      <p class="#b2dfdb teal lighten-4 waves-effect waves-light btn">
-      <%= link_to 'New Post', new_post_path %>
-    </p>

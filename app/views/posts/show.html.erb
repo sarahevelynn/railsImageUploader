@@ -6,24 +6,28 @@
     -<%= link_to @post.user, @post.user %>
   </strong>
 </p>
-<p>
-<%= link_to image_tag(@post.image.url), @post %>
+<p class="imagePage">
+  <%= link_to image_tag(@post.image.url :standard), @post %>
 </p>
 <p>
-<%= @post.caption %>
+  <%= @post.caption %>
 </p>
-<section class="section comments">
-    <div class="container">
-        <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
-        <%= render @post.comments %>
-        <div class="comment-form">
-            <hr />
-            <h3 class="subtitle is-3">Leave a reply</h3>
-             <%= render 'comments/form' %>
-        </div>
+<section class="sectionComments">
+  <div class="container">
+    <h2 class="commentsList">
+      <strong><%= @post.comments.count %></strong>
+      Comments</h2>
+    <%= render @post.comments %>
+    <div class="commentForm">
+      <hr/>
+      <h3 class="leaveComment">Leave a comment below</h3>
+      <%= render 'comments/form' %>
     </div>
+  </div>
 </section>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="editBack">
+  <%= link_to 'Edit', edit_post_path(@post) %>
+  |
+  <%= link_to 'Back', posts_path %>
+</div>

@@ -1,32 +1,35 @@
-<%= form_with(model: user, local: true) do |form| %>
+<div class="loginPage">
+  <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div id="error_explanation">
+    <h3 ><%= pluralize(user.errors.count, "error") %>
+      prohibited this user from being saved:</h3>
 
-      <ul>
+    <ul>
       <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
+  <div class="loginSection">
+    <p class="loginInfo">
+      <div class="fields">
+        <%= form.label :username, { class: 'commentLabel' } %>
+        <%= form.text_field :username %>
+      </div>
+      <div class="field">
+        <%= form.label :password, { class: 'commentLabel' } %>
+        <%= form.password_field :password %>
+      </div>
+      <div class="field">
+        <%= form.label "Confirm", { class: 'commentLabel' } %>
+        <%= form.password_field :password_confirmation %>
+      </div>
+    </p>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+      <p class="BottomButton waves-effect waves-light btn">
+        <%= form.submit %>
+      </p>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

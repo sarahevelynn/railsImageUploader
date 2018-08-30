@@ -12,17 +12,33 @@ p{
 }
 
 a{
-  color:#778899
+  color:#D9E3EA
 }
 
 footer{
-  padding-left: 10px;
+  position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+text-align: center;
+}
+
+td{
+  border-color: #506261;
+  border-style: inset;
   text-align: center;
 }
 
 #appContent{
   padding-left: 10px
+}
 
+.BottomButton{
+  background-color: #5C9B95
+}
+
+.pageTitle{
+  color: #465F6E
 }
 
 .navMobile{
@@ -34,5 +50,80 @@ footer{
   text-align: left;
   font-size:35px;
   padding-left: 10px
+}
 
+.commentCount{
+  padding-left: 10px
+}
+
+.commentsList{
+  font-size:30px
+}
+
+.commentLabel{
+  font-size:20px
+}
+
+.leaveComment{
+  font-size:30px
+}
+
+.photoCardTitle{
+  font-size:25px;
+}
+
+.cardButtons{
+  text-align: center;
+}
+
+.editBack{
+  font-size: 20px;
+  padding-left: 50px;
+  padding-top: 15px;
+}
+
+.imagePage{
+  width:500px
+}
+
+.userInfo{
+background-color: RGB( 137, 155, 154, 0.5);
+color: white;
+font-size: 20px;
+}
+
+.fields{
+  font-size: 40px
+}
+
+.loginPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%
+}
+
+.loginSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: ridge;
+  padding-right:200px;
+  padding-left:200px;
+  padding-top: 0px;
+  padding-bottom: 10px
+}
+
+.loginInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newUserButtons{
+  display: flex;
+  flex-direction: row;
 }
