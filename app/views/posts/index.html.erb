@@ -1,45 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 class="pageTitle">Posts</h1>
 
-<table>
-  <tbody>
+<div class="pictures">
+  <div class="row">
     <% @posts.each do |post| %>
-    <tr>
-      <div class="row">
-        <div class="col s12 m3">
-          <div class="card">
-            <div class="card-image">
-              <div class="photoCardTitle">
-                <em><%= post.title %></em>
-                -
-                <strong>
-                  <%= link_to post.user do %>
-                  <%= content_tag :span, post.user, :class => "postHeader" %>
-                  <% end %>
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+          <div class="photoCardTitle">
+            <em><%= post.title %></em>
+            -
+            <strong>
+              <%= link_to post.user do %>
+              <%= content_tag :span, post.user, :class => "postHeader" %>
+              <% end %>
+            </strong>
+          </div>
+          <div class="imageFormat">
+            <%= link_to image_tag(post.image.url :index ), post %>
+          </div>
+        </div>
+        <div class="card-content">
+          <%= post.caption %>
+        </div>
+        <div class="commentCount">
+          <span class="tag is-rounded"><%= post.comments.count %>
+            comments</span>
+        </div>
+        <div class="cardButtons">
+          <p class="#b2dfdb teal lighten-3 waves-effect waves-light btn">
+            <%= link_to 'Edit', edit_post_path(post) %><br >
+          </p>
+          <p class="#b2dfdb teal lighten-3 waves-effect waves-light btn">
+            <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </p>
+        </div>
+      </div>
+    </div>
 
-                </strong>
-
-              </div>
-              <%= link_to image_tag(post.image.url :index ), post %>
-            </div>
-            <div class="card-content">
-              <%= post.caption %>
-            </div>
-            <div class="commentCount">
-              <span class="tag is-rounded"><%= post.comments.count %>
-                comments</span>
-            </div>
-            <div class="cardButtons">
-              <p class="#b2dfdb teal lighten-3 waves-effect waves-light btn">
-                <%= link_to 'Edit', edit_post_path(post) %><br >
-              </p>
-              <p class="#b2dfdb teal lighten-3 waves-effect waves-light btn">
-                <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </p>
-            </div>
-
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <% end %>
+  </div>
+</div>

@@ -12,22 +12,25 @@
 </div>
 <% end %>
 
-<div class="field">
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-</div>
+<div class="newPostForm">
+  <div class="field">
+    <%= form.label :title, { class: 'commentLabel' } %>
+    <%= form.text_field :title %>
+  </div>
 
-<div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image %>
-</div>
+  <div class="field">
+    <%= form.label :image, { class: 'commentLabel' } %>
+    <%= form.file_field :image %>
+  </div>
 
-<div class="field">
-  <%= form.label :caption %>
-  <%= form.text_field :caption %>
-</div>
+  <div class="field">
+    <%= form.label :caption, { class: 'commentLabel' } %>
+    <%= form.text_field :caption %>
+  </div>
 
-<div class="actions">
-  <%= form.submit %>
+  <p class="#b2dfdb teal lighten-3 waves-effect waves-light btn">
+    <%= form.submit %>
+  </div>
+  <% end %>
+
 </div>
-<% end %>
